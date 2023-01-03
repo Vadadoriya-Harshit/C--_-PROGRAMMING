@@ -1,30 +1,26 @@
-
-	OOP : Object Oriented Programming.
+class :  
 	
-	Features of OOP
+		syntax:
+					class <class_name>
+					{
+						access specifiers:
+						 member function
+						 data members						
+					};
+			
+	Access Modifier : 
 	
-	1) Encapsulation
-	2) Inheritance
-	3) Data Abstraction
-	4) Polymorphism
-	
-	
-	1) Encapsulation : It is another name of class.
-	
-	class : it is a collection of Data Members(variables) and Member Functions. (functions)
-	        
-	object : It is a real world entity.
-	
-		Lifecycle of an object
+	They help the members to show their visibility.
+			
+					
+	There are 3 Access Specifier/Modifier
+	1) public:	
+			The member is visible within and outside the class.			
+	2) private:
+			The member is visible within its class only.	
+	3) protected:
+			The member is visible within the class and 
+			also to its sub classes.	
+			
+	By default the access specifier in class is private.				
 		
-		1) Creation.
-		2) Utilization.
-		3) Destruction.
-	        
-	e.g Paper cup
-	
-		1) create
-		2) use
-		3) destroy
-		
-	
