@@ -1,0 +1,45 @@
+
+	Constructor : 
+	
+		- It is same name as class name.
+		- No Return Type.
+		- It is use to initialize the data members.
+	
+	imp note: Constructors are called automatically
+	          when the objects are created.
+	          
+	Types of Constructors.
+	
+	1) Default Constructor.(Parameterless Constructor)
+			
+			syntax : 
+			
+					class_name()
+					{
+						statement;
+					}
+			
+			
+		
+	2) Parameterized Constructor.
+	
+		syntax :
+		
+				class_name(parameter_list)
+				{
+					statement;
+				}
+	
+	3) Copy Constructor. Object as a Parameter.
+	
+				class_name(class_name obj)
+				{
+					statements;
+				}
+	
+
+	Destructor : It is use to destroy unused objects.
+
+
+
+*/
