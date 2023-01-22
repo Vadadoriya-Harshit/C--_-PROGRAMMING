@@ -3,9 +3,8 @@
 #include<conio.h>
 
 using namespace std;
-  const int pin=3011;
-  static int initial_balance=60000;
-  const int one_attemp=1;
+  
+  
 class atm
 {
   private:
@@ -13,12 +12,16 @@ class atm
     int attempts;
 
   public:
+  	// constructor to initialize the value//
     atm()
     {
+    	const int pin=3011;
+        static int initial_balance=60000;
+        const int one_attemp=1;
     	balance=initial_balance;
     	attempts=one_attemp;
 	}
-
+ //function declaration//
     void welcome();
     void accountaccess();
     void helps();
@@ -29,9 +32,11 @@ class atm
     void exitscreen();
    
 };
+//function implemation//
  void atm::welcome()
     {
      int reply;
+     //showing time//
      time_t now = time(0);
      char* currentTime = ctime(&now);
      cout<<"\n\n\t\t\t \xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2 WELCOME TO ATM \xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2 ";
@@ -53,14 +58,15 @@ class atm
       helps();
     }
     } 
+    //function for access the account by atm pin//
 void atm::accountaccess()
    {  
     int enteredpin;
+    int pin=3011;
      cout<<"\n\n\t\t\t \xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2 ATM ACCOUNT ACCESS \xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2 "; 
   cout<<"\n\n\t\t Enter Your Account Access Pin Number[Only One Attemp Is Allow.]   : ";
   cin>>enteredpin;
-  // cout<<"\n\n\t\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\n\t\t\t";
-     
+    
      if (enteredpin==pin)
      {
        atm_menu();
@@ -82,6 +88,7 @@ void atm::helps()
     cout<<"\n\n\t\t\t Press Eny Key To Continue . . . : ";
     getch();
   }
+  //function for declaring atm main menu//
 void atm::atm_menu()
 {
   int choice;
@@ -113,12 +120,9 @@ void atm::atm_menu()
 	    case 0:exitscreen();
         break;
        }
-        
-       
-    	 
-    // cout<<"\n\n\t\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
 
 }
+//function for deposit amount to account//
  void atm::deposit()
  {
   int damt;
@@ -135,9 +139,8 @@ void atm::atm_menu()
      cout<<"\n\n\t\t\t Your new available Balance Amount is RS. :- "<<balance;
      cout<<"\n\n\t\t\t\t\t\t Thank You! ";
      
-	 
-    
  }
+ //function to withdraw amount from account//
  void atm::withdraw()
  {
  	int wamt;
@@ -163,15 +166,13 @@ void atm::atm_menu()
      {
      	cout<<"\n\n\t\t\t Your Current Balance Is : "<<balance;
 	 }
-	 
+	 //to exit from atm//
 	 void atm::exitscreen()
 	 {
 	 	
 	 	system("CLS");
 	 	cout<<"\n\n\t\t\t\t\t\t THANK YOU ,VISIT AGAIN.";
-	 	
-	 	
-	 	
+	
 	 }
  
 int main()
