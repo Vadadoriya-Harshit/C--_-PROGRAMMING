@@ -2,7 +2,7 @@
 using namespace std;
 class addition{
 	public:
-		int arr1[5],arr2[5];
+		int arr1[5],arr2[5],result[5];
 		int i;
 		int sum;
 		void add()
@@ -37,17 +37,16 @@ class addition{
 				
 			}
 		}
-//		void result()
-//		{
-//			for(i=0;i<5;i++)
-//			{
-//			
-//		    }
-//		cout<<"\n\n\t\t Addition Of 1D Array Is :- "<<sum;
-//				
+		addition operator+()
+		{
+				for (int i=0;i<5;++i)
+			{
+				cout<<"\n\n\t\t tEnter Element["<<i<<"] :- "arr1[i]+arr2[i];
 				
+			}
+	
 			
-		//}
+		}
 		
 };
 int main()
