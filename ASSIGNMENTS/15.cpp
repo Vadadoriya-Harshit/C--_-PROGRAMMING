@@ -21,16 +21,16 @@ class Matrix
 		}
 		Matrix operator+(Matrix x)
 		{
-			Matrix m;
+//			Matrix m;
 			for(i=0;i<5;i++)
 			{
-			    m.mat[i]=a[i] + x.a[i];
+			    mat[i]=a[i] + x.a[i];
 			}
 			for(i=0;i<5;i++)
 			{
-				cout<<m.mat[i]<<"\t";
+				cout<<mat[i]<<"\t";
 			}
-			return m;
+			return x;
 		}
 };
 
