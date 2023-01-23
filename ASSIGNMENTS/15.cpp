@@ -1,59 +1,62 @@
 #include<iostream>
 using namespace std;
-class addition{
+class Matrix
+{
 	public:
-		int arr1[5],arr2[5],result[5];
-		int i;
-		int sum;
-		void add()
+		int a[100],mat[100],i;
+		void input()
 		{
-			cout<<"\n\n\t\tEnter 1D Array 1 Elements Are : ";
-			for (int i=0;i<5;++i)
+			for(i=0;i<5;i++)
 			{
-				cout<<"\n\n\t\t tEnter Element["<<i<<"] :- ";
-				cin>>arr1[i];
+				cout<<"\nEnter Element ["<<i<<"] : ";
+				cin>>a[i];
 			}
-			cout<<"\n\n\t\tEnter 1D Array 2 Elements Are : ";
-			for (int i=0;i<5;++i)
-			{
-				cout<<"\n\n\t\t tEnter Element["<<i<<"] :- ";
-				cin>>arr2[i];
-			}
-			
-			
 		}
 		void display()
 		{
-			cout<<"\n\n\t\tEnter 1D Array 1 Elements Are : ";
-			for (int i=0;i<5;++i)
+			for(i=0;i<5;i++)
 			{
-				cout<<"\n\n\t\t tEnter Element["<<i<<"] :- "<<arr1[i];
-				
-			}
-			cout<<"\n\n\t\tEnter 1D Array 2 Elements Are : ";
-			for (int i=0;i<5;++i)
-			{
-				cout<<"\n\n\t\t tEnter Element["<<i<<"] :- "<<arr2[i];
-				
+				cout<<a[i]<<"\t";
 			}
 		}
-		addition operator+()
+		Matrix operator+(Matrix x)
 		{
-				for (int i=0;i<5;++i)
+			Matrix m;
+			for(i=0;i<5;i++)
 			{
-				cout<<"\n\n\t\t tEnter Element["<<i<<"] :- "arr1[i]+arr2[i];
-				
+			    m.mat[i]=a[i] + x.a[i];
 			}
-	
-			
+			for(i=0;i<5;i++)
+			{
+				cout<<m.mat[i]<<"\t";
+			}
+			return m;
 		}
-		
 };
+
 int main()
 {
-	addition ad;
-	ad.add();
-	ad.display();
-	//ad.result();
+	Matrix m,n;
+	cout<<"--------------------------------------\n";
+	cout<<"\tEnter Matrix 1 Element";
+	cout<<"\n--------------------------------------\n";
+	m.input();
+	cout<<"\n--------------------------------------\n";
+	cout<<"\tEnter Matrix 2 Element";
+	cout<<"\n--------------------------------------\n";
+	n.input();
+	cout<<"\n\n--------------------------------------\n";
+	cout<<"\t\tMatrix 1";
+	cout<<"\n--------------------------------------\n\n";
+	m.display();
+	cout<<"\n\n--------------------------------------\n";
+	cout<<"\t\tMatrix 2";
+	cout<<"\n--------------------------------------\n";
+	n.display();
+	cout<<"\n--------------------------------------\n\n";
+	cout<<"\n--------------------------------------\n";
+	cout<<"\tAddition of Two Matrix ";
+	cout<<"\n--------------------------------------\n";
+	m+n;
 	return 0;
 }
