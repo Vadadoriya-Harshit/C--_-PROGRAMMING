@@ -1,4 +1,6 @@
 #include<iostream>
+#include<ctime>
+#include <stdlib.h>
 using namespace std;
 
 class bank
@@ -18,6 +20,8 @@ public:
   void menu();
   void pingeneration();
   void mobileverify();
+  void otpview();
+  void seeotp();
   
   
 };
@@ -274,19 +278,20 @@ void bank::enterpin()
         cout<<"\n\t\t\xb2\xb2                                           \xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
         cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
         cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
-        cout<<'\n\t\t\t ENTER responce :- ';
+        cout<<"\n\t\t\t ENTER responce :- ";
         cin>>correct; 
         if (correct==1)
         {
+        	system("cls");
+        	
           mobileverify();
         }
    }
     
    void bank::mobileverify()
-   {
+    {
     long long vrfy;
     int crt;
-    
      cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
         cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
         cout<<"\n\t\t\xb2\xb2                    ENTER 10 DIGITS MOBILE NUMBER                          \xb2\xb2";
@@ -316,13 +321,92 @@ void bank::enterpin()
         cout<<"\n\t\t\xb2\xb2                                           \xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
         cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
         cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
-        cout<<'\n\t\t\t ENTER RESPONCE :- ';
+        cout<<"\n\n\t\t Enter Responce :- ";
         cin>>crt; 
+        if(crt==1)
+        {
+        	system("cls");
+        	otpview();
+        	sleep(3);
+        	system("cls");
+        	seeotp();
+		}
+        
+   }
+   void bank::otpview()
+   {
+   		time_t now = time(0);
+            char* currentTime = ctime(&now);
+			system("Color 1E");
+		 cout<<"\n\n\t\t\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";	     
+		 cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	      cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	    cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2        ";cout<<currentTime;     
+		 cout<<"\t\t\t\t\xb2\xb2                                             \xb2\xb2";                 
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";                 
+	        cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	   cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	    cout<<"\n\t\t\t\t\xb2\xb2  |---------------------------------------|  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2  |      THIS IS YOUR MOBILE SCREEN.      |  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2  |                                       |  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2  |   PLEASE WAIT 3 SECONDS TO VIEW OTP.  |  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2  |---------------------------------------|  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	   cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	   cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2 =====>>   =====>>    =====>>    =====>>>    \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2       ====>>       ====>>       =====>>     \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";	     
+	              
+		
+   }
+   void bank::seeotp()
+   {
+   		time_t now = time(0);
+            char* currentTime = ctime(&now);
+   	cout<<"\n\n\t\t\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";	     
+		 cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	      cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	    cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2        ";cout<<currentTime;     
+		 cout<<"\t\t\t\t\xb2\xb2                                             \xb2\xb2";                 
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";                 
+	        cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	   cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	    cout<<"\n\t\t\t\t\xb2\xb2  |---------------------------------------|  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2  |                                      |  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2  |        THIS IS YOUR MOBILE SCREEN    |  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2  |   PLEASE WAIT 3 SECONDS TO VIEW OTP.  |  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2  |---------------------------------------|  \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	   cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	   cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2 =====>>   =====>>    =====>>    =====>>>    \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2       ====>>       ====>>       =====>>     \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2                                             \xb2\xb2";
+	     cout<<"\n\t\t\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";	     
+	              
+		
    }
   
 
 int main()
 {
+		system("Color 1E");
   bank sbi;
   sbi.wellcome();
   sbi.insertcard();
