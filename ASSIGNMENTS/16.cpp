@@ -1,33 +1,34 @@
 #include<iostream>
-#include<string.h>
 using namespace std;
-class addString
-{
+class addString{
 	public:
-		char str[100];
+		string name,add;
 		void input()
 		{
-			cout<<"\n\tEnter Your String : ";
-			cin.getline(str,100);    //use for input space in char data type data-member
+			cout<<"\nEnter Name : ";
+			getline(cin,name);
 		}
-		void display()
+		string display()
 		{
-			cout<<"\n\tConcatenate String : "<<str;
+			return name;
 		}
-		addString operator+(addString s)
+		addString operator + (addString a)
 		{
-			addString o;
-			strcat(str,s.str);
-			strcpy(o.str,str);
-			return o;
+			add = name + a.name;
+			cout<<"\n\nConcatenate String : "<<add;
+			return a;
 		}
 };
 int main()
 {
+	string a,b;
 	addString s1,s2,s3;
 	s1.input();
 	s2.input();
+	a=s1.display();
+	b=s2.display();
+	cout<<"\nString 1 : "<<a;
+	cout<<"\nString 2 : "<<b;
 	s3 = s1 + s2;
-	s3.display();
-	return 0; 
+	return 0;
 }
