@@ -10,6 +10,7 @@ public:
   int ans;
   int pop;
   int pin=1130;
+  long long balance =525000;
   int enteredpin;
   
   void wellcome();
@@ -27,7 +28,10 @@ public:
   string pinchange();
   void newpin();
   void repin();
-  
+  void balanceinquiry();
+  void process();
+  void balis();
+  void deposit();
 };
  void bank::wellcome()
   {
@@ -264,7 +268,8 @@ void bank::enterpin()
      	case 5:system("cls");
 		       banking();
      		break;
-     	case 6:
+     	case 6:system("cls");
+              	balanceinquiry();
      		break;
      	case 7:
      		break;
@@ -500,18 +505,18 @@ int select;
     cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2  ------------------                                            \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2  | 1.REGISTRATION |                                            \xb2\xb2";
-    cout<<"\n\t\t\xb2\xb2  ------------------                                            \xb2\xb2";
-    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
-    cout<<"\n\t\t\xb2\xb2  ------------------                                            \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2  ------------------                    ---------------------   \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                        |  5. DEPOSIT CASH  |   \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2  ------------------                     --------------------   \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2  |2.  TRANSFER    |                                            \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2  ------------------                                            \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2                                         --------------------   \xb2\xb2";
-    cout<<"\n\t\t\xb2\xb2  ------------------                     | 5.BALANCE INQUIRY|   \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2  ------------------                     | 6.BALANCE INQUIRY|   \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2  | 3.  SERVICES   |                      -------------------   \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2  ------------------                                            \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2  ------------------                     --------------------   \xb2\xb2";
-    cout<<"\n\t\t\xb2\xb2  | 4.    OTHER    |                     |  6. PIN CHANGE   |   \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2  | 4.    OTHER    |                     |  7. PIN CHANGE   |   \xb2\xb2";
     cout<<"\n\t\t\xb2\xb2  ------------------                     --------------------   \xb2\xb2";
   cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
      cout<<"\n\n\t\t\t\t ENTER CHOICE :- ";
@@ -526,9 +531,13 @@ int select;
      		break;
      	case 4 :
      		break;
-     	case 5 :
-     	   break;
+        case 5 :system("cls");
+               deposit();
+            break;
      	case 6 :system("cls");
+     	        balanceinquiry();
+     	   break;
+     	case 7 :system("cls");
 		       pinchange();
      	   break;
 	 }
@@ -593,6 +602,7 @@ string bank::pinchange()
 		cout<<"\n\n\t\t TRANSACTION IS FAILED ,PLEASE TAKE YOUR CARD,";
 		exit(0);
 	}
+	
 }
 void bank::newpin()
 {
@@ -675,6 +685,130 @@ void bank::repin()
    		menu();
 	   }
 }
+void bank::balanceinquiry()
+{
+	int choice;
+		cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                   PLEASE SELECT ACCOUNT TYPE                   \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+  // cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+ //  cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+ //  cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+ //  cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |-----------------|    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |   1. KCC        |    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |-----------------|    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |-----------------|    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |   2. CURRENT    |    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |-----------------|    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |-----------------|    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |    3. SAVVING   |    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                         |-----------------|    \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+   cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+       cout<<"\n\n\t\t ENTER CHOICE :- ";
+       cin>>choice;
+       switch(choice)
+       {
+       	case 1: system("cls");
+       	       cout<<"\n\n\t\t WORK IN PROGRESS !";
+       	       break;
+    	case 2: system("cls");
+       	       cout<<"\n\n\t\t WORK IN PROGRESS !";
+       	       break;
+       	case 3: system("cls");
+       	        process();
+       	        sleep(3);
+       	        system("cls");
+       	        balis();
+       	       break;
+	   }
+       
+}
+void bank::process()
+{
+	cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+	cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2           .                                                    \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                YOUR TRANSACTION IS BEING PROCESSED.            \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                        PLEASE ,WAIT.......                     \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2                                                                \xb2\xb2";
+    cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+        
+}
+void bank::balis()
+{
+	static long long balance =125000;
+	
+	cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                    TRANSACTION COMPLETE                                   \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+       cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                       AVAILABLE BALANCE : "<<balance;       
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        //cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+       cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+    
+}
+
+void bank::deposit()
+
+{
+		cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                      PLEASE SELECT DEPOSIT TRANSACTION                    \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+       cout<<"\n\t\t\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2   |-----------------|                           |---------------|                                                \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2   | 1.OTHER ACCOUNT |                           | 2.CAH DEPOSIT |                                       \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2   |-----------------|                           |---------------|                                             \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2                                                                           \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2   |------------------|                                                                        \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2   | 3                |                                                       \xb2\xb2";
+        cout<<"\n\t\t\xb2\xb2   |------------------|                                                                        \xb2\xb2";
+  
+}
+
+
+
 int main()
 {
  system("Color 1F");
